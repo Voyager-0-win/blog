@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WinMin</title>
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --muted: #888;
+      --line: #e5e5e5;
+      --max: 640px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      padding: 4rem 2rem 4rem 4rem;
+    }
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    header {
+      margin-bottom: 3rem;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    header p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .timeline {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.25rem;
+      top: 0.5rem;
+      bottom: 0;
+      width: 1px;
+      border-left: 1px dashed var(--line);
+    }
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+    }
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.5rem;
+      top: 0.35rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--text);
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 1px var(--line);
+    }
+    .timeline-item .date {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+    }
+    .timeline-item .text {
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    @media (max-width: 600px) {
+      body { padding: 3rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>WinMin</h1>
+      <p>Hello. My name is WinMin. Nice to meet you.</p>
+    </header>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="date">2026-06-24</div>
+        <div class="text">Created blog</div>
+      </div>
+      <div class="timeline-item">
+        <div class="date">2026-08-18</div>
+        <div class="text">Be a student at <span style="text-decoration: underline; text-decoration-color: #763890; color: #763890;">Shenzhen University of Advanced Technology</span></div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
