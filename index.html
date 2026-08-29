@@ -10,6 +10,8 @@
       --muted: #888;
       --line: #e5e5e5;
       --max: 640px;
+      --bar-bg: #f0f0f0;
+      --bar-fill: #763890;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -17,6 +19,7 @@
       color: var(--text);
       line-height: 1.6;
       padding: 4rem 2rem 4rem 4rem;
+      background: #fafafa;
     }
     main {
       max-width: var(--max);
@@ -34,6 +37,47 @@
       color: var(--muted);
       font-size: 0.9rem;
     }
+    .myskills {
+      margin-bottom: 2.5rem;
+    }
+    .skill-bar {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .skill-bar:last-child {
+      margin-bottom: 0;
+    }
+    .skill-label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      min-width: 5.5rem;
+      color: var(--text);
+    }
+    .track {
+      flex: 1;
+      height: 0.5rem;
+      background: var(--bar-bg);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.04);
+    }
+    .fill {
+      height: 100%;
+      width: 0%;
+      background: var(--bar-fill);
+      border-radius: 20px;
+      transition: width 0.2s ease;
+    }
+    .skill-percent {
+      font-size: 0.75rem;
+      color: var(--muted);
+      min-width: 2.6rem;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
     .timeline {
       position: relative;
       padding-left: 1.5rem;
@@ -63,7 +107,7 @@
       height: 0.5rem;
       border-radius: 50%;
       background: var(--text);
-      border: 2px solid var(--bg);
+      border: 2px solid #fafafa;
       box-shadow: 0 0 0 1px var(--line);
     }
     .timeline-item .date {
@@ -75,8 +119,15 @@
       font-size: 0.95rem;
       color: var(--text);
     }
+    .timeline-item .text span {
+      text-decoration: underline;
+      text-decoration-color: #763890;
+      color: #763890;
+    }
     @media (max-width: 600px) {
       body { padding: 3rem 1rem; }
+      .skill-label { min-width: 4.5rem; font-size: 0.8rem; }
+      .skill-percent { min-width: 2.2rem; font-size: 0.7rem; }
     }
   </style>
 </head>
@@ -84,8 +135,32 @@
   <main>
     <header>
       <h1>WinMin</h1>
-      <p>Hello. My name is WinMin. Nice to meet you.</p>
+      <p>Hello. My name is Min Win. Nice to meet you.</p>
     </header>
+
+    <div class="myskills">
+      <div class="skill-bar">
+        <span class="skill-label">Python</span>
+        <div class="track"><div class="fill" style="width: 34%;"></div></div>
+        <span class="skill-percent">34%</span>
+      </div>
+      <div class="skill-bar">
+        <span class="skill-label">C/C++</span>
+        <div class="track"><div class="fill" style="width: 13%;"></div></div>
+        <span class="skill-percent">13%</span>
+      </div>
+      <div class="skill-bar">
+        <span class="skill-label">JavaScript</span>
+        <div class="track"><div class="fill" style="width: 17%;"></div></div>
+        <span class="skill-percent">17%</span>
+      </div>
+      <div class="skill-bar">
+        <span class="skill-label">Algorithms</span>
+        <div class="track"><div class="fill" style="width: 11%;"></div></div>
+        <span class="skill-percent">11%</span>
+      </div>
+    </div>
+
     <div class="timeline">
       <div class="timeline-item">
         <div class="date">2026-06-24</div>
@@ -93,7 +168,11 @@
       </div>
       <div class="timeline-item">
         <div class="date">2026-08-18</div>
-        <div class="text">Be a student at <span style="text-decoration: underline; text-decoration-color: #763890; color: #763890;">Shenzhen University of Advanced Technology</span></div>
+        <div class="text">Be a student at <span>Shenzhen University of Advanced Technology</span></div>
+      </div>
+      <div class="timeline-item">
+        <div class="date">2026-09-01</div>
+        <div class="text">Aged 19</div>
       </div>
     </div>
   </main>
