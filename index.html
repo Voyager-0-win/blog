@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WinMin</title>
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --muted: #888;
+      --line: #e5e5e5;
+      --max: 640px;
+      --bar-bg: #f0f0f0;
+      --bar-fill: #763890;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      padding: 4rem 2rem 4rem 4rem;
+      background: #fafafa;
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 3rem;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .myskills {
+      margin-bottom: 2.5rem;
+    }
+
+    .skill-bar {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .skill-bar:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      min-width: 5.5rem;
+      color: var(--text);
+    }
+
+    .track {
+      flex: 1;
+      height: 0.5rem;
+      background: var(--bar-bg);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    .fill {
+      height: 100%;
+      width: 0%;
+      background: var(--bar-fill);
+      border-radius: 20px;
+      transition: width 0.8s ease;
+    }
+
+    .skill-percent {
+      font-size: 0.75rem;
+      color: var(--muted);
+      min-width: 2.6rem;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.25rem;
+      top: 0.5rem;
+      bottom: 0;
+      width: 1px;
+      border-left: 1px dashed var(--line);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.5rem;
+      top: 0.35rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--text);
+      border: 2px solid #fafafa;
+      box-shadow: 0 0 0 1px var(--line);
+    }
+
+    .timeline-item .date {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+    }
+
+    .timeline-item .text {
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .timeline-item .text span {
+      text-decoration: underline;
+      text-decoration-color: #763890;
+      color: #763890;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 2rem 2rem;
+      }
+
+      .skill-label {
+        min-width: 4.5rem;
+        font-size: 0.8rem;
+      }
+
+      .skill-percent {
+        min-width: 2.2rem;
+        font-size: 0.7rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>WinMin</h1>
+      <p>Hello. My name is Min Win. Nice to meet you.</p>
+    </header>
+
+    <div class="myskills"></div>
+    <div class="timeline"></div>
+  </main>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
