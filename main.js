@@ -1,6 +1,5 @@
 import { skills, timeline } from "./data.js"
 
-/* ---------- 技能条 ---------- */
 const skillsEl = document.querySelector(".myskills")
 
 skillsEl.innerHTML = skills.map(s => `
@@ -13,14 +12,12 @@ skillsEl.innerHTML = skills.map(s => `
   </div>
 `).join("")
 
-// 下一帧再设宽度，触发 CSS transition 动画
 requestAnimationFrame(() => {
   skillsEl.querySelectorAll(".fill").forEach(el => {
     el.style.width = el.dataset.percent + "%"
   })
 })
 
-/* ---------- 时间线 ---------- */
 const timelineEl = document.querySelector(".timeline")
 
 timelineEl.innerHTML = timeline.map(item => `
